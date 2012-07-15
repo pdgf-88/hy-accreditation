@@ -1,0 +1,61 @@
+\usemodule[t-lettrine]
+\setuplettrine [][Lines=1,Hang=0.2,Oversize=0.00]
+
+\usemodule[bib]
+\usemodule[bibltx]
+\setupbibtex[database=bibliography]
+\setuppublications[numbering=yes] % Show reference numbers and urls in the generated list.
+\environment bibl-num-url2
+\environment boxit
+
+\startmode[asintended] \setupbodyfont[lbr] \stopmode
+
+\switchtobodyfont[modern, 14.4pt]
+
+%\setuppapersize[S6][S6]
+%\definepapersize[exotic][width=320mm, height=800mm]
+\setuppapersize[letter]
+%\setuppapersize[exotic]
+
+\setuppagenumbering[location={footer, middle}]
+\setuppagenumbering[state=start]
+
+%\setuptolerance[verytolerant,stretch] 
+
+\setupcolors[state=start]
+\setupbackgrounds[page][background=color,backgroundcolor=white]
+\startcolor[black]
+
+%\setupinteractionscreen[option=max]
+
+\setuplayout
+	[leftmargin=1cm,
+	 rightmargin=1cm,
+	 top=1cm,
+	 bottom=1cm]
+
+\setupexternalfigures[directory={/home/mike2/Pictures,/media/PRESARIO/Documents and Settings/Owner/My Documents/My Pictures,/home/mike2/Pictures/2010/11/25,/home/mike2/Pictures/signature}]
+
+\setupinteraction[state=start,color=lightblue]
+
+\setupfootnotes[bodyfont=big,before=\crlf]
+
+\definefontfeature[devanagari][script=deva]
+\definefontsynonym[devanagari][name:gargi][features=devanagari]
+
+%\frenchspacing
+%\tolerance = 1000
+\setupfloat[intermezzo][leftmargindistance=-.8in,rightmargindistance=-.8in,default={outer,high}]
+\setupcaption[intermezzo][location=none]
+
+\defineframedtext
+[myohmy]
+[width=.5\textwidth,bodyfont=12pt,
+frame=off,
+backgroundcorner=round,
+backgroundradius=6pt,background=screen,backgroundscreen=.95]
+%\showframe
+%\setupmarginblocks[style=small,width=5cm,before=\startmyohmy,after={\relax,\stopmyohmy},align=middle,]
+\long\def\sidebar#1{\placeintermezzo{}{\startmyohmy #1 \relax\stopmyohmy}}
+
+
